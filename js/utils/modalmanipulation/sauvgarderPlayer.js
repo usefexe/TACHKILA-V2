@@ -1,35 +1,24 @@
    import { validerFormulaire } from "../validation/validateformilaire.js";
-   import { playerNumberInp , playerNameInp , selectedPost } from "../../storage/htmldata.js";
+   import { playerNumberInp , playerNameInp ,success } from "../../storage/htmldata.js";
    import { showInlinup } from "../../ui/Showplayerinlnlinup.js";
    import { showPlayer } from "../../ui/ShowPlayer.js";
 import { fermerModal } from "../../ui/Modalui.js";
 import { resetModal } from "../../ui/Modalui.js";
 import { saveInlocalstorage } from "../../index.js";
-
+import { state } from "../../storage/localstorage.js";
+import { createPlayer } from "./playersevice.js";
+import { editePlayer } from "./playersevice.js";
    
-   function sauvegarderPlayer(e,playerToEdit,listBntouce) {
+   function sauvegarderPlayer(e,listBntouce) {
     e.preventDefault();
+    
+    if (!validerFormulaire(state.playerToEdit)) return;
 
-    if (!validerFormulaire()) return;
+    const newPlayer = createPlayer(playerNameInp,playerNumberInp,state.selectedPost)
 
-    const newPlayer = {
-        name: playerNameInp.value.trim(),
-        nubmer: Number(playerNumberInp.value),
-        post: selectedPost,
-        inlineup: false,
-        positoninlinup: "libre"
+    if (state.playerToEdit) {
 
-    };
-
-    if (playerToEdit) {
-
-        playerToEdit.name = newPlayer.name;
-        playerToEdit.nubmer = newPlayer.nubmer;
-        if (playerToEdit.post !== newPlayer.post) {
-            playerToEdit.positoninlinup = 'libre'
-            showInlinup()
-        }
-        playerToEdit.post = newPlayer.post;
+     editePlayer(state.playerToEdit,newPlayer)
         saveInlocalstorage()
         showInlinup()
 

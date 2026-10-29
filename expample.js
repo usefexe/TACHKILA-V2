@@ -13,74 +13,12 @@
 // form validation
 
 // savegarde de modal
-function sauvegarderPlayer(e) {
-    e.preventDefault();
-
-    if (!validerFormulaire()) return;
-
-    const newPlayer = {
-        name: playerNameInp.value.trim(),
-        nubmer: Number(playerNumberInp.value),
-        post: selectedPost,
-        inlineup: false,
-        positoninlinup: "libre"
-
-    };
-
-    if (playerToEdit) {
-
-        playerToEdit.name = newPlayer.name;
-        playerToEdit.nubmer = newPlayer.nubmer;
-        if (playerToEdit.post !== newPlayer.post) {
-            playerToEdit.positoninlinup = 'libre'
-            showInlinup()
-        }
-        playerToEdit.post = newPlayer.post;
-        saveInlocalstorage()
-        showInlinup()
-
-
-    } else {
-
-        listBntouce.push(newPlayer);
-        saveInlocalstorage()
-    }
-
-    showPlayer();
-
-    fermerModal();
-    resetModal();
-
-    success.classList.remove("heading");
-
-    setTimeout(() => {
-        success.classList.add("heading");
-    }, 3000);
-}
 
 
 
 
 // supresiion confermation 
 
-confirmedelete.addEventListener('click', () => {
-    listBntouce.splice(playertodelete, 1);
-    showPlayer();
-    showInlinup()
-    deleteModal.classList.add('heading')
-    deletealert.classList.remove('heading')
-    setTimeout(() => {
-        deletealert.classList.add('heading')
-    }, 3000);
-    playerToEdit = null
-    saveInlocalstorage()
-})
-
-
-anullerdelete.addEventListener("click", () => {
-    deleteModal.classList.add('heading')
-    playerToEdit = null
-})
 
 
 
@@ -98,87 +36,13 @@ saveModal.addEventListener("click", sauvegarderPlayer);
 
 // CNAGER LE POST 
 
-function postMatch(choix, player) {
-    let match = false
-    if (choix === "GB") {
-        player.post === "GK" ? match = true : match = false
-    } else if (["CM1", "CM2", "RM", "LM"].includes(choix)) {
-        player.post === "CM" ? match = true : match = false
-    } else if (["CB1", "CB2", "RB", "LB"].includes(choix)) {
-        player.post === "CB" ? match = true : match = false
-    } else if (["ST1", "ST2"].includes(choix)) {
-        player.post === "ATT" ? match = true : match = false
-    }
-    return match
-}
 
 
-function findPlayr(number) {
-    const player = listBntouce.filter(element => {
-        return element.nubmer == number
-    });
-
-    return player[0]
-}
 
 
-function changerPost(player, postchoix) {
-    const postexist = listBntouce.findIndex((el) => {
-        return el.positoninlinup === postchoix
-
-    })
-    if (postchoix === "Libre") {
-        player.positoninlinup = "libre"
-
-        chnagetoband.classList.remove("heading")
-        setTimeout(() => {
-            chnagetoband.classList.add("heading");
-        }, 3000);
-
-    }
-    else if (postexist === -1) {
-        if (postMatch(postchoix, player)) {
-            player.positoninlinup = postchoix
-
-            alertchangepostsucssec.classList.remove("heading")
-            setTimeout(() => {
-                alertchangepostsucssec.classList.add("heading");
-            }, 3000);
-        } else {
-
-            postechangerror.classList.remove("heading")
-            setTimeout(() => {
-                postechangerror.classList.add("heading");
-            }, 3000);
-
-        }
-    } else {
-
-        postplienerror.classList.remove("heading")
-        setTimeout(() => {
-            postplienerror.classList.add("heading");
-        }, 3000);
-    }
-    showInlinup()
-    showPlayer()
-    saveInlocalstorage()
-}
 
 
-PlayerList.addEventListener('change', (e) => {
-    const chngerposition = e.target.closest("#positionchange")
-    if (chngerposition) {
 
-        let number = chngerposition.dataset.number
-        const player = findPlayr(number)
-        const postchoix = chngerposition.value
-        changerPost(player, postchoix)
-    } else {
-        return
-    }
-}
-)
-showPlayer()
 
 
 

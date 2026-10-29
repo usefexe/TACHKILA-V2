@@ -1,5 +1,8 @@
 import { getPlayer } from "../../storage/localstorage.js";
-function validerNumero(number) {
+
+let listBntouce=getPlayer
+
+function validerNumero(number,playerToEdit) {
     const numero = Number(number);
 
     if (!Number.isInteger(numero) || numero < 1 || numero > 99) {

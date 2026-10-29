@@ -1,4 +1,5 @@
-import { nameError , postError , numberError , playerNameInp , playerNumberInp ,selectedPost} from ".js";
+import { nameError , postError , numberError , playerNameInp , playerNumberInp ,modale} from "../storage/htmldata.js";
+import { state } from "../storage/localstorage.js";
 function cacherErreurs() {
 
     nameError.classList.add("heading");
@@ -11,11 +12,11 @@ function fermerModal() {
     cacherErreurs();
 }
 
-function resetModal() {
+function resetModal(selectedPost,playerToEdit) {
     playerNameInp.value = "";
     playerNumberInp.value = "";
-    selectedPost = "";
-    playerToEdit = null;
+    state.selectedPost = "";
+    state.playerToEdit = null;
 }
 
 

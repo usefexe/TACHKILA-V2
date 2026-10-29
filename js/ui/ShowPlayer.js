@@ -1,7 +1,10 @@
 
 import { countplayer,PlayerList } from "../storage/htmldata.js"
-function showPlayer(listBntouce) {
+import { getPlayer } from "../storage/localstorage.js"
 
+let listBntouce=getPlayer
+function showPlayer() {
+     
     PlayerList.innerHTML = ""
     countplayer.textContent = `${listBntouce.length} Joueurs`
     let Tshirt = ""

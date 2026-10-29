@@ -1,6 +1,9 @@
 import { validerNumero } from "./validerNumero.js";
 import { validerNom } from "./validerNom.js";
 import { numberError , nameError , postError,  playerNumberInp , playerNameInp } from "../../storage/htmldata.js";
+
+import { state } from "../../storage/localstorage.js";
+
 function validerFormulaire() {
     let valide = true;
 
@@ -11,14 +14,14 @@ function validerFormulaire() {
         nameError.classList.add("heading");
     }
 
-    if (!validerNumero(playerNumberInp.value)) {
+    if (!validerNumero(playerNumberInp.value,state.playerToEdit)) {
         numberError.classList.remove("heading");
         valide = false;
     } else {
         numberError.classList.add("heading");
     }
 
-    if (!selectedPost) {
+    if (!state.selectedPost) {
         postError.classList.remove("heading");
         valide = false;
     } else {
