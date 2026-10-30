@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TACHKILA COMPOSITION</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style/index.css">
-
+  <script src="./js/index.js" type="module" defer></script>
 </head>
 
 <body>
 
-    <header class="w-screen  bg-sky-800 h-16 border border-b-indigo-500  max-lg:h-auto max-lg:py-3   ">
+    <header class="w-full  bg-sky-800 h-16 border border-b-indigo-500  max-lg:h-auto max-lg:py-3   ">
         <nav class="flex justify-between items-center    max-lg:flex-col max-lg:gap-1  ">
             <img src="./imgs/logo.png" alt="logo" class="w-40 mt-1 ml-3">
-            <UL class="flex gap-2 mt-1">
+
+
+             <nav class="flex items-center justify-center rounded-2xl gap-1  bg-sky-300 h-10  mt-1.5  px-4 ">
+         <a href="./effetive.html" class="font-bold hover:text-slate-200 w-30 flex justify-center">effectif</a>
+         <a href="./index.html" class="font-bold  bg-green-600 pb-0.5 w-30 flex justify-center rounded-2xl hover:bg-green-500 text-slate-200  ">composition </a>
+         <a href="./match.html" class="font-bold hover:text-slate-200 w-30 flex justify-center">match </a>
+
+          </nav>
+
+
+            <UL class="flex gap-2 mb-1 mr-">
                 <li class="mt-4 p0 font-bold text-orange-500 text-sm"> 
                     <i class="fa-solid fa-shirt w-4"></i>
                     GB
@@ -34,13 +44,8 @@
                     ATT
                 </li>
             </UL>
-
-            <ol class="inline-flex  max-lg:ml-8">
-                <p class="mt-4.5 text-mist-400  font-bold mr-1">Shema</p>
-                <button class="bg-sky-950 h-8 w-16 mt-4 mr-10 rounded-xl">
-                    4-4-2
-                </button>
-            </ol>
+         
+       
         </nav>
     </header>
 
@@ -427,6 +432,6 @@
     </div>
  
 </body>
-<script src="./js/index.js" type="module"></script>
+
 
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACHKILA EFFECTIF</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style/index.css">
+<script src="./effictif.js" type="module" defer></script>
+</head>
+<body>
+       <header class="w-full  bg-sky-800 h-16 border border-b-indigo-500  max-lg:h-auto max-lg:py-3   ">
+        <nav class="flex justify-between items-center    max-lg:flex-col max-lg:gap-1  ">
+            <img src="./imgs/logo.png" alt="logo" class="w-40 mt-1 ml-3">
+
+     <nav class="flex items-center justify-center rounded-2xl gap-1  bg-sky-300 h-10  mt-1.5  px-4 ">
+         <a href="./effetive.html" class="font-bold  bg-green-600 pb-0.5 w-30 flex justify-center rounded-2xl hover:bg-green-500 text-slate-200 ">effectif</a>
+         <a href="./index.html" class="font-bold hover:text-slate-200 w-30 flex justify-center ">composition </a>
+         <a href="./match.html" class="font-bold hover:text-slate-200 w-30 flex justify-center">match </a>
+
+          </nav>
+
+
+            <UL class="flex gap-2 mb-1 mr-5">
+                <li class="mt-4 p0 font-bold text-orange-500 text-sm"> 
+                    <i class="fa-solid fa-shirt w-4"></i>
+                    GB
+                </li>
+                <li class="mt-4 p0 font-bold text-cyan-600 text-sm">
+                    <i class="fa-solid fa-shirt w-4"></i>
+                    DEF
+                </li>
+                <li class="mt-4 p0 font-bold text-green-400 text-sm">
+                    <i class="fa-solid fa-shirt w-4"></i>
+                    MIL
+                </li>
+                <li class="mt-4 p0 font-bold text-red-600 text-sm">
+                    <i class="fa-solid fa-shirt w-4"></i>
+                    ATT
+                </li>
+            </UL>
+         
+       
+        </nav>
+    </header>
+
+    <main class="w-full h-[576px] bg-[url('./imgs/effective.png')] bg-cover bg-center bg-no-repeat  pt-1 " >
+       <h1 class=" font-extrabold text-4xl text-cyan-100 ml-130  ">Effectif</h1>
+       <p class="ml-115 font-semibold text-slate-400">Gerer les joueurs du club Atlas FC.</p>
+
+       
+<section
+    class="relative z-10 mx-auto w-[calc(100%-1.5rem)]
+           max-w-7xl
+           flex flex-col gap-3
+           rounded-2xl border border-slate-700/80
+           bg-slate-700/60 p-3
+           shadow-lg
+           sm:w-[calc(100%-2.5rem)] sm:p-4
+           lg:flex-row lg:items-center lg:gap-4 mt-5 "
+>
+    <!-- Search -->
+    <div class="min-w-0 flex-1">
+        <input
+            type="search"
+            id="searchPlayer"
+            placeholder="Rechercher un joueur par nom..."
+            class="h-11 w-full rounded-xl
+                   border border-slate-600
+                   bg-slate-800/50 px-4
+                   text-sm text-slate-200
+                   placeholder:text-slate-500
+                   outline-none transition
+                   focus:border-sky-600"
+        >
+    </div>
+
+    <!-- Filters -->
+    <div
+        id="playerFilters"
+        class="grid w-full grid-cols-5 gap-1
+               rounded-xl bg-slate-900/50 p-1
+               lg:w-auto lg:shrink-0"
+    >
+        <button data-filter="ALL"
+            class="rounded-lg bg-green-600 px-3 py-2
+                   text-sm font-bold text-white">
+            Tous
+        </button>
+
+        <button data-filter="GK"
+            class="rounded-lg px-3 py-2 text-sm
+                   font-bold text-slate-300 hover:bg-slate-800">
+            GB
+        </button>
+
+        <button data-filter="CB"
+            class="rounded-lg px-3 py-2 text-sm
+                   font-bold text-slate-300 hover:bg-slate-800">
+            DEF
+        </button>
+
+        <button data-filter="CM"
+            class="rounded-lg px-3 py-2 text-sm
+                   font-bold text-slate-300 hover:bg-slate-800">
+            MIL
+        </button>
+
+        <button data-filter="ATT"
+            class="rounded-lg px-3 py-2 text-sm
+                   font-bold text-slate-300 hover:bg-slate-800">
+            ATT
+        </button>
+    </div>
+</section>
+
+
+
+
+
+  <section id="playereffliste" class=" flex  gap-3 p-5 flex-wrap">
+   
+<!--  liste player  -->
+
+  </section>
+    </main>
+    
+<div class="fixed bottom-3 left-1/2 z-50 flex -translate-x-1/2 items-center gap-4 rounded-xl border border-slate-700 px-3 py-2 bg-slate-800/50">
+
+    <button id="prevPage" disabled
+        class="px-2 text-lg text-slate-400 hover:text-white disabled:opacity-30">
+        &lt;
+    </button>
+
+    <span class="text-sm font-semibold text-slate-200">
+        <span id="currentPage">1</span>
+        <span class="mx-1 text-slate-500">/</span>
+        <span id="totalPages">2</span>
+    </span>
+
+    <button id="nextPage"
+        class="px-2 text-lg font-bold text-green-500 hover:text-green-400">
+        &gt;
+    </button>
+
+</div>
+
+</body>
+
+</html>

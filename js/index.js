@@ -3,6 +3,7 @@ import { showPlayer } from "./ui/ShowPlayer.js";
 import { showInlinup } from "./ui/Showplayerinlnlinup.js";
 import { modalEvent } from "./ui/events/modalEvent.js";
 import { PlaerListevents } from "./ui/events/playerListeevents.js";
+
 let playerToEdit = null;
 let playerListe=getPlayer
 console.log(playerListe)
@@ -16,7 +17,7 @@ function saveInlocalstorage() {
 
 
 modalEvent(playerListe )
-console.log(playerListe)
+
 showPlayer(playerListe)
 showInlinup(playerListe)
 
