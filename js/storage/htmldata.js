@@ -1,5 +1,8 @@
 const ajouterbutton = document.getElementById("ajouter");
 const PlayerList = document.getElementById("PlayerList");
+const playerAgeInp = document.getElementById("playerAge");
+const playerStatusInp = document.getElementById("playerStatus");
+const ageError = document.getElementById("ageerror");
 const xmodale = document.getElementById("closeModal");
 const modale = document.getElementById("modalOverlay");
 const modifmodale = document.getElementById("modifmodalOverlay");
@@ -77,5 +80,8 @@ export {
   confirmedelete,
   anullerdelete,
   deletealert,
+  playerAgeInp,
+  playerStatusInp,
+  ageError,
 };
 

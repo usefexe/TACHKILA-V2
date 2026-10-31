@@ -9,17 +9,21 @@ import {
   chnagetoband,
   alertchangepostsucssec,
   postechangerror,
+
 } from "../../storage/htmldata.js";
 import { postMatch } from "../logiquemetier/postmatch.js";
 import { saveInlocalstorage } from "../../index.js";
 
-export function createPlayer(playerNameInp, playerNumberInp, selectedPost) {
+export function createPlayer(playerNameInp, playerNumberInp, selectedPost, playerAgeInp, playerStatusInp) {
   const newPlayer = {
     name: playerNameInp.value.trim(),
     nubmer: Number(playerNumberInp.value),
     post: selectedPost,
     inlineup: false,
     positoninlinup: "libre",
+    itcapitan: false,
+    age: Number(playerAgeInp.value),
+    status: playerStatusInp.value
   };
   return newPlayer;
 }
@@ -27,6 +31,8 @@ export function createPlayer(playerNameInp, playerNumberInp, selectedPost) {
 export function editePlayer(playerToEdit, newPlayer) {
   playerToEdit.name = newPlayer.name;
   playerToEdit.nubmer = newPlayer.nubmer;
+    playerToEdit.age = newPlayer.age;
+  playerToEdit.status = newPlayer.status;
   if (playerToEdit.post !== newPlayer.post) {
     playerToEdit.positoninlinup = "libre";
     showInlinup();

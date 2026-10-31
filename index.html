@@ -263,113 +263,155 @@
         <p class="text-lg font-semibold">sucsees</p>
         <p id="text"> auuto assignid affecté avec sucsses .</p>
 </div>
-    <div id="modalOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 heading">
+   
+<div id="modalOverlay"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 heading">
 
+    <div id="playerModal"
+        class="relative w-full max-w-xl max-h-[85vh] overflow-y-auto mx-4 rounded-2xl border border-slate-700 bg-slate-800 p-5 shadow-2xl">
 
-        <div id="playerModal"
-            class="relative w-full max-w-lg mx-4 rounded-2xl border border-slate-700 bg-slate-800 p-7 shadow-2xl">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-bold text-white">
+                Ajouter un joueur
+            </h2>
 
+            <button id="closeModal" type="button"
+                class="text-slate-400 hover:text-white text-xl transition"
+                aria-label="Fermer le modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
 
-            <div class="flex items-center justify-between mb-7">
-                <h2 class="text-xl font-bold text-white">
-                    Ajouter un joueur
-                </h2>
+        <div class="space-y-2">
 
-                <button id="closeModal" type="button" class="text-slate-400 hover:text-white text-2xl transition"
-                    aria-label="Fermer le modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+            <!-- Name -->
+            <div>
+                <label for="playerName"
+                    class="block mb-1 text-sm font-semibold text-slate-300">
+                    Nom complet
+                </label>
+
+                <input type="text" id="playerName"
+                    placeholder="Ex. Ayoub Mansouri"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
             </div>
 
-
-            <div class="space-y-3">
-
-
-                <div>
-                    <label class="block mb-2 text-sm font-semibold text-slate-300">
-                        Nom complet
-                    </label>
-
-                    <input type="text" id="playerName" placeholder="Ex. Ayoub Mansouri"
-                        class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
-                </div>
-                <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 error"
-                    id="nameerror">
-                    nom onvalide entrer un nom valide ex: Ramos.
-                </div>
-
-
-                <div>
-                    <p class=" text-sm font-semibold text-slate-300">
-                        Poste
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-2" id="positionPlaye">
-
-                        <button type="button" data-position="GK"
-                            class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-3 text-sm font-semibold text-slate-200 hover:border-amber-500 position">
-                            <i class="fa-solid fa-circle text-amber-500 text-xs"></i>
-                            Gardien
-                        </button>
-
-                        <button type="button" data-position="CB"
-                            class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-3 text-sm font-semibold text-slate-200 hover:border-blue-500 position">
-                            <i class="fa-solid fa-circle text-blue-500 text-xs"></i>
-                            Défenseur
-                        </button>
-
-                        <button type="button" data-position="CM"
-                            class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-3 text-sm font-semibold text-slate-200 hover:border-green-500 position">
-                            <i class="fa-solid fa-circle text-green-500 text-xs"></i>
-                            Milieu
-                        </button>
-
-                        <button type="button" data-position="ATT"
-                            class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-3 text-sm font-semibold text-slate-200 hover:border-red-500 position">
-                            <i class="fa-solid fa-circle text-red-500 text-xs "></i>
-                            Attaquant
-                        </button>
-                    </div>
-                    <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 flex-1 mt-2 error"
-                        id="posterror">
-                        imposible dajjouter un jouer sans post
-                    </div>
-                </div>
-
-
-                <div>
-                    <label for="playerNumber" class="block mb-2 text-sm font-semibold text-slate-300">
-                        Numéro (1 à 99)
-                    </label>
-
-                    <input type="number" id="playerNumber" value="0" min="1" max="99" placeholder="Ex. 7"
-                        class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
-                </div>
-                <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 error "
-                    id="nbrerror">
-                    entrer un nombre valide .
-                </div>
-
+            <div id="nameerror"
+                class="border border-red-400 rounded-b bg-red-100 px-3 py-2 text-sm text-red-700 error">
+                Nom invalide, entrer un nom valide ex: Ramos.
             </div>
 
+            <!-- Position -->
+            <div>
+                <p class="mb-1 text-sm font-semibold text-slate-300">
+                    Poste
+                </p>
 
-            <div class=" flex justify-end gap-3 mt-1">
+                <div class="grid grid-cols-2 gap-2" id="positionPlaye">
 
-                <button type="button" id="cancelModal"
-                    class="rounded-xl bg-slate-700 px-5 py-3 font-semibold text-white transition hover:bg-slate-600">
-                    Annuler
-                </button>
+                    <button type="button" data-position="GK"
+                        class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-200 hover:border-amber-500 position">
+                        <i class="fa-solid fa-circle text-amber-500 text-xs"></i>
+                        Gardien
+                    </button>
 
-                <button type="button" id="addPlayer"
-                    class="rounded-xl bg-green-600 px-5 py-3 font-semibold text-white transition hover:bg-green-500 ">
-                    Ajouter
-                </button>
+                    <button type="button" data-position="CB"
+                        class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 position">
+                        <i class="fa-solid fa-circle text-blue-500 text-xs"></i>
+                        Défenseur
+                    </button>
 
+                    <button type="button" data-position="CM"
+                        class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-200 hover:border-green-500 position">
+                        <i class="fa-solid fa-circle text-green-500 text-xs"></i>
+                        Milieu
+                    </button>
+
+                    <button type="button" data-position="ATT"
+                        class="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-200 hover:border-red-500 position">
+                        <i class="fa-solid fa-circle text-red-500 text-xs"></i>
+                        Attaquant
+                    </button>
+
+                </div>
+
+                <div id="posterror"
+                    class="border border-red-400 rounded-b bg-red-100 px-3 py-2 text-sm text-red-700 mt-2 error">
+                    Impossible d'ajouter un joueur sans poste.
+                </div>
+            </div>
+
+            <!-- Number -->
+            <div>
+                <label for="playerNumber"
+                    class="block mb-1 text-sm font-semibold text-slate-300">
+                    Numéro (1 à 99)
+                </label>
+
+                <input type="number" id="playerNumber" min="1" max="99"
+                    placeholder="Ex. 7"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
+            </div>
+
+            <div id="nbrerror"
+                class="border border-red-400 rounded-b bg-red-100 px-3 py-2 text-sm text-red-700 error">
+                Entrer un nombre valide.
+            </div>
+
+            <!-- Age -->
+            <div>
+                <label for="playerAge"
+                    class="block mb-1 text-sm font-semibold text-slate-300">
+                    Âge
+                </label>
+
+                <input type="number" id="playerAge" min="15" max="45"
+                    placeholder="Ex. 29"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
+            </div>
+
+            <div id="ageerror"
+                class="border border-red-400 rounded-b bg-red-100 px-3 py-2 text-sm text-red-700 error">
+                Entrer un âge valide.
+            </div>
+
+            <!-- Status -->
+            <div>
+                <label for="playerStatus"
+                    class="block mb-1 text-sm font-semibold text-slate-300">
+                    Statut du joueur
+                </label>
+
+                <select id="playerStatus"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-sm text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30">
+
+                    <option value="enforme">En forme</option>
+                    <option value="blese">Blessé</option>
+                    <option value="suspendu">Suspendu</option>
+
+                </select>
             </div>
 
         </div>
 
+        <!-- Footer -->
+        <div class="flex justify-end gap-3 mt-4">
+
+            <button type="button" id="cancelModal"
+                class="rounded-xl bg-slate-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-600">
+                Annuler
+            </button>
+
+            <button type="button" id="addPlayer"
+                class="rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-500">
+                Ajouter
+            </button>
+
+        </div>
+
     </div>
+</div>
 
 
     <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg  fixed top-20 left-100  z-[100] heading"

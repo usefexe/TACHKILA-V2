@@ -104,14 +104,14 @@ export function showEffectif() {
             </button>
 
 
-            <button type="button"
+            <button type="button"  data-number='${el.nubmer}' id='edite'
                     class="text-slate-400 transition hover:text-blue-400 text-m"
                     aria-label="Modifier">
                 <i class="fa-solid fa-pen"></i>
             </button>
 
             <!-- Bouton Supprimer -->
-            <button type="button"
+            <button type="button"   data-number='${el.nubmer}' id='delete'
                     class="text-slate-400 transition hover:text-red-500 text-m"
                     aria-label="Supprimer">
                 <i class="fa-solid fa-trash-can"></i>

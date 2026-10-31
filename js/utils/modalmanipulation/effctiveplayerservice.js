@@ -1,4 +1,5 @@
   import { getPlayer } from "../../storage/localstorage.js"
+ import { saveInlocalstorage } from "../../../effictif.js"
   export function setcapitan(player){
     getPlayer.forEach((el)=>{
         el.itcapitan=false
@@ -14,3 +15,7 @@
     return player[0];
   }
   
+  export function deleteplayer(index){
+      getPlayer.splice(index,1)
+      saveInlocalstorage()
+  }

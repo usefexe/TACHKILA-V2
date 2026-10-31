@@ -3,6 +3,11 @@ import { pagiantion } from "./js/ui/events/pagination.js";
 import { showEffectif } from "./js/ui/showeffective.js";
 import { searchinput } from "./js/ui/events/serachinput.js";
 import { effectifCardEevnt } from "./js/ui/events/effectivecardevets.js";
+import { getPlayer } from "./js/storage/localstorage.js";
+const playlist=getPlayer
+export function saveInlocalstorage() {
+    localStorage.setItem("joueurs", JSON.stringify(playlist))
+}
 showEffectif()
 playerFilter()
 pagiantion()

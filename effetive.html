@@ -145,7 +145,107 @@
     </button>
 
 </div>
+<!-- 
+edite modal  -->
 
+
+<div id="effectiveEditModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 flex justify-center">
+
+    <div class="relative mx-4 w-full max-w-lg rounded-2xl border border-slate-700 bg-slate-800/50 p-5 shadow-2xl">
+
+        <div class="mb-4 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-white">Modifier le joueur</h2>
+
+            <button type="button" id="effectiveCloseEdit"
+                class="text-xl text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="space-y-3">
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">Nom complet</label>
+                <input id="effectiveEditName" type="text"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">Numéro</label>
+                <input id="effectiveEditNumber" type="number" min="1" max="99"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">Poste</label>
+                <select id="effectiveEditPost"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+                    <option value="GK">Gardien</option>
+                    <option value="CB">Défenseur</option>
+                    <option value="CM">Milieu</option>
+                    <option value="ATT">Attaquant</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">Âge</label>
+                <input id="effectiveEditAge" type="number" min="15" max="45"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">Statut</label>
+                <select id="effectiveEditStatus"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+                    <option value="enforme">En forme</option>
+                    <option value="blese">Blessé</option>
+                    <option value="suspendu">Suspendu</option>
+                </select>
+            </div>
+
+            <p id="effectiveEditError" class="hidden text-sm text-red-400"></p>
+
+        </div>
+
+        <div class="mt-4 flex justify-end gap-3">
+            <button type="button" id="effectiveCancelEdit"
+                class="rounded-xl bg-slate-700 px-4 py-2 font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+            <button type="button" id="effectiveSaveEdit"
+                class="rounded-xl bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-500">
+                Enregistrer
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+    <div id="deleteModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 hidden">
+
+        <div class="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 p-3 shadow-xl">
+
+            <button id="confirmDelete" type="button"
+                class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500">
+                Confirmer
+            </button>
+
+            <button id="cancelDelete" type="button"
+                class="rounded-lg bg-slate-700 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+        </div>
+    </div>
+
+       <div id="deletealert"
+        class=" mb-2 bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded-lg shadow-lg  fixed top-20 left-100  z-[100] hidden">
+        <p class="font-semibold">done</p>
+        <p>le jouer est suprime </p>
+    </div>
 </body>
 
 </html>
