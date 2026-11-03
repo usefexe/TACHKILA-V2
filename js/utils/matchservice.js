@@ -1,3 +1,4 @@
+import { matchs, savematchlocalstr } from "../storage/localstorage.js";
 export function setMatchTheme(match) {
 
     const now = new Date();
@@ -72,4 +73,19 @@ export function formatMatchDate(date) {
 
         date: matchDate.getDate()
     };
+}
+export function findMatch(id){
+   const Match=matchs.filter((el)=>{
+    return el.id==id
+   })
+   return Match[0]
+}
+
+export function saveMatchs() {
+    // localStorage.setItem("matchs", JSON.stringify(matchs));
+   
+}
+export function deleteMatch(index){
+    matchs.splice(index,1)
+    savematchlocalstr()
 }

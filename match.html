@@ -105,7 +105,7 @@
                    focus:border-sky-600"
         >
     </div>
-    <button  class="text-center font-bold text-slate-200 w-50 h-10 hover:bg-green-800 bg-green-500 rounded-xl ">
+    <button  class="text-center font-bold text-slate-200 w-50 h-10 hover:bg-green-800 bg-green-500 rounded-xl " id="ajouterMatch">
         Ajouter Match
     </button>
 
@@ -119,7 +119,134 @@
    
 
 </section>
+   <div id="addMatchModal"
+    class="fixed inset-0 z-50  items-center justify-center bg-black/60 hidden  flex justify-center items-center">
 
+    <div class="relative mx-4 w-full max-w-lg rounded-2xl border border-slate-700 bg-slate-800 p-5 shadow-2xl">
+
+        <!-- Header -->
+        <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-white">Ajouter un match</h2>
+
+            <button type="button" id="closeMatchModal"
+                class="text-xl text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- Adversaire -->
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300" >
+                    Adversaire
+                </label>
+                <input id="matchAdversaire" type="text" 
+                    placeholder="Nom de l'équipe adverse"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none placeholder:text-slate-500 focus:border-blue-500">
+            </div>
+
+            <!-- Date -->
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300" id="datematch">
+                    Date
+                </label>
+                <input id="matchDate" type="date"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+            </div>
+
+            <!-- Heure -->
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">
+                    Heure
+                </label>
+                <input id="matchHeure" type="time"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none focus:border-blue-500">
+            </div>
+
+            <!-- Lieu -->
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">
+                    Lieu
+                </label>
+                <input id="matchLieu" type="text"
+                    placeholder="Stade ou adresse du match"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none placeholder:text-slate-500 focus:border-blue-500">
+            </div>
+
+            <!-- Type de match -->
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-slate-300">
+                    Type de match
+                </label>
+
+                <div class="flex gap-6">
+
+                    <label class="flex cursor-pointer items-center gap-2 text-sm text-white">
+                        <input type="radio" name="matchType" value="domicile"
+                            class="h-4 w-4 accent-blue-500" >
+                        À domicile
+                    </label>
+
+                    <label class="flex cursor-pointer items-center gap-2 text-sm text-white">
+                        <input type="radio" name="matchType" value="exterieur"
+                            class="h-4 w-4 accent-blue-500">
+                        À l'extérieur
+                    </label>
+
+                </div>
+            </div>
+
+            <p id="matchError" class="hidden text-sm text-red-400"></p>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex justify-end gap-3">
+
+            <button type="button" id="cancelMatchModal"
+                class="rounded-xl bg-slate-700 px-4 py-2 font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+            <button type="button" id="saveMatch"
+                class="rounded-xl bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-500">
+                Enregistrer
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 fixed top-20 left-100  z-[100]  rounded-lg hidden"
+        id="sucssec">
+        <p class="text-lg font-semibold">sucsees</p>
+        <p id="text"> confirmation : le match ajouter avec succes .</p>
+    </div>
+
+        <div id="deletealert"
+        class=" mb-2 bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded-lg shadow-lg  fixed top-20 left-100  z-[100] hidden">
+        <p class="font-semibold">done</p>
+        <p>le match est suprime </p>
+    </div>
+        <div id="deleteModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 hidden">
+
+        <div class="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 p-3 shadow-xl">
+
+            <button id="confirmDelete" type="button"
+                class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500">
+                Confirmer
+            </button>
+
+            <button id="cancelDelete" type="button"
+                class="rounded-lg bg-slate-700 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+        </div>
+    </div>
+ 
     </main>
     
 </body>

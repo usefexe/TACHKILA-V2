@@ -3,8 +3,8 @@ import { matchs } from "../storage/localstorage.js";
 const matchCrads=document.getElementById('matchlsit')
 import { setMatchTheme } from "../utils/matchservice.js";
 import { formatMatchDate } from "../utils/matchservice.js";
-
 import { mtchstate } from "../storage/localstorage.js";
+
 export function showMatch(){
 let matchlist=matchs.filter((el) => {
     const matchTheme=setMatchTheme(el)
@@ -49,7 +49,7 @@ matchlist.forEach((el)=>{
     <div class="match-info flex gap-3 items-center">
 
         <span class="match-type bg-green-600/70 rounded-2xl font-semibold text-slate-200 h-7 px-2">Domicile</span>
-   <div>
+   <div class='w-70'>
         <h2 class="text-2xl font-bold  text-slate-300">Atlas FC vs ${el.adversaire}</h2>
 
         <p class="match-location text-slate-400 font-semibold ml-9">
@@ -60,7 +60,7 @@ matchlist.forEach((el)=>{
     </div>
 
    
-    <div class="match-result flex flex-col items-center mt-4">
+    <div class="match-result flex flex-col items-center mt-4 ">
 
         <span class="score py-1 w-20 bg-${matchth.color}-600/70 rounded-2xl ${!matchth.showScore?'hidden':''} text-l text-center font-bold text-slate-300">${el.butsAtlas} - ${el.butsAdversaire}</span>
 
@@ -81,16 +81,16 @@ matchlist.forEach((el)=>{
         </button>
 
     </div>
-
+    
     <div class="flex items-center px-2 gap-2">
-        <button type="button"  
-                    class="text-slate-400 transition hover:text-blue-400 text-m"
+        <button type="button"   id='modifierMatch' data-id='${el.id}'
+                    class="  modifierMatch text-slate-400 transition hover:text-blue-400 text-m"
                     aria-label="Modifier">
                 <i class="fa-solid fa-pen"></i>
             </button>
 
             <!-- Bouton Supprimer -->
-            <button type="button"   
+            <button type="button"    id='suprimerMatch' data-id='${el.id}'
                     class="text-slate-400 transition hover:text-red-500 text-m"
                     aria-label="Supprimer">
                 <i class="fa-solid fa-trash-can"></i>
