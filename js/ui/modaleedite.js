@@ -26,3 +26,12 @@ export function fermerModalMatch() {
     matchError.textContent = "";
     mtchstate.matchToedit = null;
 }
+export function resetMtachaModal(){
+    datematch.value=''
+    matchAdversaire.value=''
+    matchHeure.value=''
+    matchLieu.value=''
+    matchError.classList.add("hidden")
+    document.querySelector(`input[name="matchType"][value='domicile']`).checked = false
+document.querySelector(`input[name="matchType"][value='exterieur']`).checked = false
+}

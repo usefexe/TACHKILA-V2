@@ -48,7 +48,7 @@ matchlist.forEach((el)=>{
   
     <div class="match-info flex gap-3 items-center">
 
-        <span class="match-type bg-green-600/70 rounded-2xl font-semibold text-slate-200 h-7 px-2">Domicile</span>
+        <span class="match-type  ${el.domicile?"bg-green-600/70":"bg-slate-600/70"} rounded-2xl font-semibold text-slate-200 h-7 px-2">  ${el.domicile?"Domicile":"Exterieur"}</span>
    <div class='w-70'>
         <h2 class="text-2xl font-bold  text-slate-300">Atlas FC vs ${el.adversaire}</h2>
 
@@ -71,7 +71,7 @@ matchlist.forEach((el)=>{
     <!-- Match Actions -->
     <div class="match-actions flex flex-col items-center h-full gap-2 mt-3">
 
-        <div class="edit-score bg-sky-800/80 hover:bg-sky-600 w-30 text-center text-slate-400 font-semibold rounded-xl h-9 items-center flex items-center justify-center ${!matchth.showScoreButton?'hidden':''}">
+        <div id='score' class="edit-score bg-sky-800/80 hover:bg-sky-600 w-30 text-center text-slate-400 font-semibold rounded-xl h-9 items-center flex items-center justify-center ${!matchth.showScoreButton?'hidden':''}  " data-id='${el.id}'>
            
             Saiser le score
         </div>

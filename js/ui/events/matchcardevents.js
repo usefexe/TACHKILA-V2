@@ -2,14 +2,15 @@ const matchCrads = document.getElementById("matchlsit");
 import { mtchstate ,matchs} from "../../storage/localstorage.js";
 import { findMatch } from "../../utils/matchservice.js";
 import { modaledite } from "../modaleedite.js";
+import { matchScore } from "./MatchScore.js";
 const deleteModal=document.getElementById('deleteModal')
 
 const maodal = document.getElementById("addMatchModal");
 export function matchCardEvents() {
-    matchCrads.addEventListener("click", (e) => {
+    matchCrads.addEventListener("click",  (e) => {
         const editebtn = e.target.closest(".modifierMatch");
         const deletebtn=e.target.closest("#suprimerMatch");
-
+        const scorebtn=e.target.closest('#score')
         if (editebtn) {
             mtchstate.matchToedit = findMatch(editebtn.dataset.id);
 
@@ -25,7 +26,13 @@ export function matchCardEvents() {
             
           })
           deleteModal.classList.remove('hidden')
-        }else{
+        }else if(scorebtn){
+          const id = scorebtn.dataset.id
+        
+         matchScore(id)
+        }
+        
+        else{
           return
         }
     });

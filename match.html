@@ -247,6 +247,64 @@
         </div>
     </div>
  
+
+
+     
+<div id="score"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60">
+
+    <div class="relative mx-4 w-full max-w-lg rounded-2xl border border-slate-700 bg-slate-800 p-5 shadow-2xl">
+
+        <!-- Header -->
+        <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-white">
+                Saisir le score du match
+            </h2>
+        </div>
+
+        <!-- Inputs -->
+        <div class="space-y-4">
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300" id="adv">
+                    Adversaire
+                </label>
+                <input id="scoreAdvirsaire" type="number" min="0"
+                    placeholder="Nombre de buts de l'adversaire"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none placeholder:text-slate-500 focus:border-blue-500">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold text-slate-300">
+                    Atlas score
+                </label>
+                <input id="atlasscore" type="number" min="0"
+                    placeholder="Nombre de buts d'Atlas FC"
+                    class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 text-white outline-none placeholder:text-slate-500 focus:border-blue-500">
+            </div>
+
+            <p id="scoreError" class="hidden text-sm text-red-400">enterer des score valide </p>
+        
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex justify-end gap-3">
+
+            <button type="button" id="cancelScore"
+                class="rounded-xl bg-slate-700 px-4 py-2 font-semibold text-white hover:bg-slate-600">
+                Annuler
+            </button>
+
+            <button type="button" id="saveScore"
+                class="rounded-xl bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-500">
+                Enregistrer
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
     </main>
     
 </body>

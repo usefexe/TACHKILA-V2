@@ -1,11 +1,12 @@
 const ajouterMatch=document.getElementById('ajouterMatch')
 const txt=document.getElementById('text')
 const maodal = document.getElementById("addMatchModal");
+import { resetMtachaModal } from "../modaleedite.js";
 import { mtchstate } from "../../storage/localstorage.js";
 
 export function  AjouterMatch(){
      ajouterMatch.addEventListener('click',()=>{
-       
+                resetMtachaModal()
                  mtchstate.matchToedit=null
                   txt.textContent='confirmation : le match ajouter avec succes .'
                    maodal.classList.remove("hidden");

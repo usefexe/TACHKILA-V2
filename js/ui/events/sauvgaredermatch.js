@@ -19,7 +19,7 @@ export function savematch() {
         date: matchDate.value,
         heure: matchHeure.value,
         lieu: matchLieu.value.trim(),
-        domicile: document.querySelector(
+        "domicile": document.querySelector(
             'input[name="matchType"]:checked'
         ).value === "domicile",
           composition:[],
