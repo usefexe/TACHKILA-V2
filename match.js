@@ -6,6 +6,7 @@ import { savematch } from "./js/ui/events/sauvgaredermatch.js";
 import { fermerModalMatch } from "./js/ui/modaleedite.js";
 import { AjouterMatch } from "./js/ui/events/ajoutermarchev.js";
 import { confirmeDeleteModal } from "./js/ui/events/deletematchModal.js";
+
 showMatch()
 searchMatch()
 filterMatch()
@@ -19,3 +20,4 @@ document.getElementById("cancelMatchModal").addEventListener("click", () => {
 });
 AjouterMatch()
 confirmeDeleteModal()
+

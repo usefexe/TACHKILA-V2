@@ -6,7 +6,7 @@ import { PlaerListevents } from "./ui/events/playerListeevents.js";
 
 let playerToEdit = null;
 let playerListe=getPlayer
-console.log(playerListe)
+
 let playertodelete=null
 
 

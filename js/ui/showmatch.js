@@ -76,7 +76,7 @@ matchlist.forEach((el)=>{
             Saiser le score
         </div>
 
-        <button type="button" class="lineup-button bg-sky-800/20 hover:bg-sky-600/20 w-30 text-center text-slate-200 font-semibold rounded-xl h-9 ${!matchth.showComposition?'hidden':''} items-center flex items-center justify-center" >
+        <button type="button" class="lineup-button bg-sky-800/20 hover:bg-sky-600/20 w-30 text-center text-slate-200 font-semibold rounded-xl h-9 ${!matchth.showComposition?'hidden':''} items-center flex items-center justify-center" id='showcomposition' data-id='${el.id}' >
           composition
         </button>
 

@@ -11,6 +11,7 @@ export function matchCardEvents() {
         const editebtn = e.target.closest(".modifierMatch");
         const deletebtn=e.target.closest("#suprimerMatch");
         const scorebtn=e.target.closest('#score')
+        const showcomposition=e.target.closest('#showcomposition')
         if (editebtn) {
             mtchstate.matchToedit = findMatch(editebtn.dataset.id);
 

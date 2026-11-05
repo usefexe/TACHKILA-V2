@@ -13,7 +13,6 @@ const adv=document.getElementById('adv')
 
 export function matchScore(id){
     txt.textContent='confirmation score de match inseerer'
-    console.log(id)
     const match = findMatch(id)
   
     scoreModal.classList.remove('hidden')

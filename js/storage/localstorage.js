@@ -1,6 +1,8 @@
 const getPlayer= JSON.parse(localStorage.getItem("joueurs")) || []
 
 export const matchs =JSON.parse(localStorage.getItem("matchs")) || []
+
+
 export function savematchlocalstr(){
     localStorage.setItem("matchs",JSON.stringify(matchs))
 }
