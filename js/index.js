@@ -5,7 +5,7 @@ import { assignCcmposition } from "./ui/events/assignevent.js";
 import { chnageEquipeComp } from "./ui/events/changeequicomp.js";
 import { modalEvent } from "./ui/events/modalEvent.js";
 import { PlaerListevents } from "./ui/events/playerListeevents.js";
-
+import { dragAndDrop } from "./ui/events/draganddrop.js";
 let playerToEdit = null;
 let playerListe=getPlayer
 
@@ -26,5 +26,5 @@ showInlinup(playerListe)
 PlaerListevents()
 chnageEquipeComp()
 assignCcmposition()
-
+dragAndDrop()
 export {saveInlocalstorage,playerToEdit}
