@@ -1,9 +1,25 @@
 
 import { countplayer,PlayerList } from "../storage/htmldata.js"
-import { getPlayer } from "../storage/localstorage.js"
-
+import { getPlayer ,matchs} from "../storage/localstorage.js"
+  const selectMatch=document.getElementById('selectMatch')
 let listBntouce=getPlayer
 function showPlayer() {
+selectMatch.innerHTML=`      <option value="" selected disabled>
+            Sélectionner un match
+        </option>`
+        matchs.map((match)=>{
+     const now = new Date();
+    const matchDate = new Date(`${match.date}T${match.heure}:00`);
+           if(matchDate>now){
+            const option = document.createElement('option')
+            option.setAttribute('value',match.id)
+            option.textContent=`        
+            Atlas vs ${match.adversaire}`
+            selectMatch.appendChild(option)
+           }
+           
+         
+        })
                 function dejaOccupe (post)
                 
                 { const dj=listBntouce.some((el) => {

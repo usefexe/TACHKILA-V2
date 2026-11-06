@@ -1,9 +1,15 @@
 
 
-
+const compositionModal=document.getElementById('compositionModal')
+const closeCompositionModal= document.getElementById('closeCompositionModal')
 export function ShowComposition(compo){
+
+    closeCompositionModal.addEventListener('click',()=>{
+        compositionModal.classList.add('hidden')
+    })
+    compositionModal.classList.remove('hidden')
     const terrainPostes = {
-    GK: document.getElementById('GK'),
+    GB: document.getElementById('GK'),
     LB: document.getElementById('LB'),
     RB: document.getElementById('RB'),
     CB1: document.getElementById('CB1'),

@@ -3,8 +3,8 @@ import { mtchstate ,matchs} from "../../storage/localstorage.js";
 import { findMatch } from "../../utils/matchservice.js";
 import { modaledite } from "../modaleedite.js";
 import { matchScore } from "./MatchScore.js";
-const deleteModal=document.getElementById('deleteModal')
-
+import { ShowComposition } from "./showcomposition.js";
+const deleteModal=document.getElementById('deleteModal') 
 const maodal = document.getElementById("addMatchModal");
 export function matchCardEvents() {
     matchCrads.addEventListener("click",  (e) => {
@@ -29,8 +29,13 @@ export function matchCardEvents() {
           deleteModal.classList.remove('hidden')
         }else if(scorebtn){
           const id = scorebtn.dataset.id
-        
+          
          matchScore(id)
+        }else if(showcomposition){
+          const match=findMatch(showcomposition.dataset.id)
+          ShowComposition(match.composition)
+          // console.log(match.composition)
+         
         }
         
         else{

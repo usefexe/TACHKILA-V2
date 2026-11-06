@@ -83,3 +83,14 @@ export function changerPost(player, postchoix) {
   showPlayer();
   saveInlocalstorage();
 }
+export function valideCOmposistion(){
+  let count=0
+   for (let i = 0; i < getPlayer.length; i++) {
+    if(getPlayer[i].positoninlinup!=='libre'){
+      count++
+    }
+    
+   }
+ 
+   return count===11
+}

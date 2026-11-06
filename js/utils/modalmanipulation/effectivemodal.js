@@ -93,3 +93,5 @@ function afficherErreur(message) {
   effectiveEditError.textContent = message;
   effectiveEditError.classList.remove("hidden");
 }
+
+
