@@ -8,6 +8,7 @@ import { PlaerListevents } from "./ui/events/playerListeevents.js";
 import { dragAndDrop } from "./ui/events/draganddrop.js";
 let playerToEdit = null;
 let playerListe=getPlayer
+import { resetAutoAssign } from "./ui/events/resetautoassign.js";
 
 
  
@@ -22,7 +23,7 @@ modalEvent(playerListe )
 
 showPlayer(playerListe)
 showInlinup(playerListe)
-
+resetAutoAssign()
 PlaerListevents()
 chnageEquipeComp()
 assignCcmposition()

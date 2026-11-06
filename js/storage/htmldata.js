@@ -83,5 +83,9 @@ export {
   playerAgeInp,
   playerStatusInp,
   ageError,
+  Reset,
+  autoassigned,
+  autoassignedmsg,
+  restalert,
 };
 
