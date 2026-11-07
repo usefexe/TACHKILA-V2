@@ -28,7 +28,7 @@ matchlist.forEach((el)=>{
    
        const div = document.createElement('div')
         const matchth=setMatchTheme(el)
-       const classlis=`flex py-1 my-3 px-3 bg-sky-900/40 justify-between rounded-xl border-l-5 border-${matchth.color}-500`
+       const classlis=`flex py-1 my-3 px-3 bg-sky-900/40 justify-between rounded-xl border-l-5 border-${matchth.color}-500 flex-col lg:flex-row`
        classlis.split(' ').forEach(el=>{
         div.classList.add(el)
        }) 
@@ -36,7 +36,7 @@ matchlist.forEach((el)=>{
        div.innerHTML=`       
    
     
-    <div class="match-date flex flex-col  items-center gap-0 py-0 rounded-2xl bg-sky-950/60 w-20">
+    <div class=class="match-date flex flex-col items-center gap-0 py-2  bg-sky-950/60 w-24 lg:w-20 lg:flex lg:ml-10 shrink-0">
         <span class="day font-semibold text-slate-300">${dt.day}</span>
         <span class="date font-bold text-slate-100 text-3xl">${dt.date}</span>
         <span class="month font-semibold text-slate-300 text-center">${dt.month}</span>
@@ -46,13 +46,13 @@ matchlist.forEach((el)=>{
 
 
   
-    <div class="match-info flex gap-3 items-center">
+<div class="match-info flex flex-col sm:flex-row gap-2 sm:gap-3 items-center justify-center w-full lg:w-auto min-w-0">
 
         <span class="match-type  ${el.domicile?"bg-green-600/70":"bg-slate-600/70"} rounded-2xl font-semibold text-slate-200 h-7 px-2">  ${el.domicile?"Domicile":"Exterieur"}</span>
-   <div class='w-70'>
-        <h2 class="text-2xl font-bold  text-slate-300">Atlas FC vs ${el.adversaire}</h2>
+ <div class="w-full sm:w-70 min-w-0 text-center sm:text-left">
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-slate-300 break-words">Atlas FC vs ${el.adversaire}</h2>
 
-        <p class="match-location text-slate-400 font-semibold ml-9">
+       <p class="match-location text-slate-400 font-semibold mt-1 text-sm sm:text-base break-words">
             <span><i class="fa-solid fa-location-dot"></i></span>
             ${el.lieu}
         </p>
@@ -60,38 +60,38 @@ matchlist.forEach((el)=>{
     </div>
 
    
-    <div class="match-result flex flex-col items-center mt-4 ">
+    <div class="match-result flex flex-col items-center justify-center gap-1 mt-2 lg:mt-4 w-full lg:w-auto">
 
         <span class="score py-1 w-20 bg-${matchth.color}-600/70 rounded-2xl ${!matchth.showScore?'hidden':''} text-l text-center font-bold text-slate-300">${el.butsAtlas} - ${el.butsAdversaire}</span>
 
-        <span class="result-status text-2xl font-bold text-${matchth.color}-400">${matchth.txt}</span>
+        <span class="result-status text-lg sm:text-xl lg:text-2xl font-bold text-${matchth.color}-400">${matchth.txt}</span>
 
     </div>
 
     <!-- Match Actions -->
-    <div class="match-actions flex flex-col items-center h-full gap-2 mt-3">
+   <div class="match-actions flex flex-row flex-wrap lg:flex-col items-center justify-center gap-2 mt-2 lg:mt-3 w-full lg:w-auto">
 
-        <div id='score' class="edit-score bg-sky-800/80 hover:bg-sky-600 w-30 text-center text-slate-400 font-semibold rounded-xl h-9 items-center flex items-center justify-center ${!matchth.showScoreButton?'hidden':''}  " data-id='${el.id}'>
+        <div id='score' class="edit-score bg-sky-800/80 hover:bg-sky-600 w-32 sm:w-30 text-center text-slate-400 font-semibold rounded-xl h-9 items-center flex items-center justify-center ${!matchth.showScoreButton?'hidden':''}  " data-id='${el.id}'>
            
             Saiser le score
         </div>
 
-        <button type="button" class="lineup-button bg-sky-800/20 hover:bg-sky-600/20 w-30 text-center text-slate-200 font-semibold rounded-xl h-9 ${!matchth.showComposition?'hidden':''} items-center flex items-center justify-center" id='showcomposition' data-id='${el.id}' >
+        <button type="button" class="lineup-button bg-sky-800/20 hover:bg-sky-600/20 w-32 sm:w-30 text-center text-slate-200 font-semibold rounded-xl h-9 ${!matchth.showComposition?'hidden':''} items-center flex items-center justify-center" id='showcomposition' data-id='${el.id}' >
           composition
         </button>
 
     </div>
     
-    <div class="flex items-center px-2 gap-2">
+    <div class="flex items-center justify-center gap-4 px-2 py-2 lg:py-0 shrink-0">
         <button type="button"   id='modifierMatch' data-id='${el.id}'
-                    class="  modifierMatch text-slate-400 transition hover:text-blue-400 text-m"
+                    class="  modifierMatch text-slate-400 transition hover:text-blue-400 text-m p-2"
                     aria-label="Modifier">
                 <i class="fa-solid fa-pen"></i>
             </button>
 
             <!-- Bouton Supprimer -->
             <button type="button"    id='suprimerMatch' data-id='${el.id}'
-                    class="text-slate-400 transition hover:text-red-500 text-m"
+                    class="text-slate-400 transition hover:text-red-500 text-m p-2"
                     aria-label="Supprimer">
                 <i class="fa-solid fa-trash-can"></i>
             </button>
